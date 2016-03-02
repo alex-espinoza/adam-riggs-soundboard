@@ -20,14 +20,24 @@ var Soundbites = React.createClass({
     }
   },
 
+  playSoundbite: function(soundbite, e) {
+    var audio = document.getElementById(soundbite.id);
+    audio.play();
+  },
+
   render: function() {
     var soundbites = this.state.soundbites.map(function(soundbite, index) {
+      var boundPlaySoundbite = this.playSoundbite.bind(this, soundbite);
+
       return (
         <div className="small-12 large-6 columns soundbite" key={index}>
-          <button><h3>{soundbite.label}</h3></button>
+          <div onClick={boundPlaySoundbite}>
+            <h3>{soundbite.label}</h3>
+            <audio id={soundbite.id} src={soundbite.src}></audio>
+          </div>
         </div>
       )
-    });
+    }, this);
 
     return (
       <div className="row">
