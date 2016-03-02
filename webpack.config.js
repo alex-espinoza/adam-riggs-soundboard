@@ -1,3 +1,5 @@
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 module.exports = {
   entry: './app/components/Main.js',
   output: {
@@ -12,7 +14,15 @@ module.exports = {
         query: {
           presets: ['react', 'es2015']
         }
+      },
+      {
+        test: /\.css$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
       }
     ]
-  }
+  },
+  plugins: [
+    new ExtractTextPlugin('public/style.css', {allChunks: false})
+  ]
 }
