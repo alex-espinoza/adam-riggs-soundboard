@@ -19,13 +19,17 @@ var Soundbites = React.createClass({
   },
 
   render: function() {
-    console.log(this.state.soundbites);
+    var soundbites = this.state.soundbites.map(function(soundbite, index) {
+      return (
+        <div className="small-6 columns soundbite" key={index}>
+          <h3>{soundbite.label}</h3>
+        </div>
+      )
+    });
 
     return (
       <div className="row">
-        <div className="small-12 columns">
-          <div>Testing</div>
-        </div>
+        {soundbites}
       </div>
     )
   }
