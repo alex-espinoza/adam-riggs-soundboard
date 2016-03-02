@@ -1,3 +1,15 @@
-.soundbite h3 {
+.soundbite {
+  padding-bottom: 12px;
+}
+
+.soundbite button {
+  width: 100%;
   background-color: red;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.soundbite button h3 {
+  text-align: center;
+  text-transform: uppercase;
 }

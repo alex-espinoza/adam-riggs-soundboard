@@ -23,8 +23,8 @@ var Soundbites = React.createClass({
   render: function() {
     var soundbites = this.state.soundbites.map(function(soundbite, index) {
       return (
-        <div className="small-6 columns soundbite" key={index}>
-          <h3>{soundbite.label}</h3>
+        <div className="small-12 large-6 columns soundbite" key={index}>
+          <button><h3>{soundbite.label}</h3></button>
         </div>
       )
     });
