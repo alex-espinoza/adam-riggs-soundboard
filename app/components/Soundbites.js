@@ -1,5 +1,7 @@
 var React = require('react');
 
+require('../stylesheets/soundbites.css');
+
 var Soundbites = React.createClass({
   getInitialState: function() {
     return {
