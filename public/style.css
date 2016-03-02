@@ -2,14 +2,21 @@
   padding-bottom: 12px;
 }
 
-.soundbite button {
+.soundbite div {
   width: 100%;
-  background-color: red;
+  background-color: gray;
   padding: 20px;
   border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.05s linear;
 }
 
-.soundbite button h3 {
+.soundbite div:hover {
+  transform: scale(0.99);
+  transform-style: preserve-3d;
+}
+
+.soundbite div h3 {
   text-align: center;
   text-transform: uppercase;
 }
